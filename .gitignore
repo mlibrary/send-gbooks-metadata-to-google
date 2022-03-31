@@ -2,3 +2,4 @@ service_account_json_key.json
 .env
 .bundle/
 .byebug_history
+vendor/
