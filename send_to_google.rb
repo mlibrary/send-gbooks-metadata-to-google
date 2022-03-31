@@ -20,8 +20,5 @@ authorizer = Google::Auth::ServiceAccountCredentials.from_env(scope)
 drive.authorization = authorizer
 metadata = Drive::File.new(name: name, parents: [ENV.fetch('FOLDER')])
 metadata = drive.create_file(metadata, upload_source: file_path, content_type: 'application/x-gzip')
-#for debugging
-#puts metadata
-#drive.delete_file(metadata.id)
 
 logger.info("Finished sending #{file_path} to the google drive")
